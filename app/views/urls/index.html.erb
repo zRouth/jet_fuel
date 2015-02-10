@@ -2,23 +2,30 @@
 
   <br>
 
-<h5> <%= form_for @url do |f| %>
+<h2><center> <%= form_for @url do |f| %>
     <%= f.label :full_url, "Enter your super extra long url" %><br>
     <%= f.text_field :full_url %>
     <%= f.submit "shrink this url" %>
   <% end %>
-</h5>
+</h2>
 
-<h3>List of Previously Shortened Urls</h3>
+<br>
+<br>
+<br>
+<br>
 
-<div>
+<h3><center>These are the URLs that you hath previous shrunk</h3>
+
+<br>
+<br>
+
+<center><div>
   <table class="">
     <thead>
       <tr>
-        <th class="text-center">Original URL</th>
-        <th class="text-center">Short URL</th>
+        <th class="text-center">Super Extra Crazy Unacceptably Long URL</th>
+        <th class="text-center">URL Hath been Shrunk</th>
         <th class="text-center">Created At</th>
-        <th class="text-center">Rank</th>
       </tr>
     </thead>
 
@@ -27,7 +34,7 @@
       <% @urls.each do |url| %>
         <td><%= url.full_url %></td>
         <td><%= url.slug %></td>
-        <td><%= url.created_at.strftime("%d/%m/%y %l:%M") %>
+        <td><%= url.created_at.strftime("%m/%d/%y %l:%M") %>
       </tr>
     <% end %>
     </tbody>
