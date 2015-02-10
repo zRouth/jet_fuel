@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 root to: "urls#index"
 
 resources :urls
+get ':slug' => 'urls#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

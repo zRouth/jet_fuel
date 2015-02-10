@@ -2,6 +2,7 @@ class UrlsController < ApplicationController
 
   def index
     @url = Url.new
+    @urls = Url.all
   end
 
   def create
@@ -12,7 +13,15 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find_by(slug: params[:slug])
+    if params[:slug]
+      @url = Url.find_by(slug: params[:slug])
+      if redirect_to @url.full_url
+        # @url.clicks += 1
+        @url.save
+      end
+    else
+      @url = Url.find(params[:id])
+    end
   end
 
   private
