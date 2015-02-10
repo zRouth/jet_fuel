@@ -1,0 +1,13 @@
+class Api::V1::UrlsController < ApplicationController
+  respond_to :json
+
+  def create
+    respond_with(Url.create(poopin))
+  end
+
+  private
+
+  def poopin
+    params.require(:url).permit(:full_url)
+  end
+end
