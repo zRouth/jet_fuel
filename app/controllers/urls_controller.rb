@@ -2,7 +2,7 @@ class UrlsController < ApplicationController
 
   def index
     @url = Url.new
-    @urls = Url.order(created_at: :desc)
+    @urls = Url.order(rank: :desc, created_at: :desc)
   end
 
   def create
@@ -16,6 +16,7 @@ class UrlsController < ApplicationController
     if params[:slug]
       @url = Url.find_by(slug: params[:slug])
       if redirect_to @url.full_url
+        @url.rank += 1
         @url.save
       end
     else

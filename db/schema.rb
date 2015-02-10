@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209202057) do
+ActiveRecord::Schema.define(version: 20150210163349) do
 
   create_table "urls", force: true do |t|
     t.string   "full_url"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150209202057) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rank",       default: 0
   end
 
 end

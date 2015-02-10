@@ -31,6 +31,7 @@
         <th class="text-center">Super Extra Crazy Unacceptably Long URL</th>
         <th class="text-center">URL Hath been Shrunk</th>
         <th class="text-center">This URL was shrunk at</th>
+        <th class="text-center">Rank</th>
       </tr>
     </thead>
 
@@ -40,6 +41,7 @@
         <td><%= url.full_url %></td>
         <td><%= url.slug %></td>
         <td><%= url.created_at.strftime("%m/%d/%y %l:%M") %>
+        <td><%= url.rank %>
       </tr>
     <% end %>
     </tbody>
