@@ -1,8 +1,10 @@
 class Url < ActiveRecord::Base
   validates :full_url, presence: true
+  after_create :generate_slug
 
-  def create_slug
-    self.slug = SecureRandom.urlsafe_base64(4)
+  def generate_slug
+    self.slug = self.id.to_s(36)
+    self.save
   end
 
 end

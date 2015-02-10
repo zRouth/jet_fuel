@@ -1,4 +1,4 @@
-<h1><center>Honey, I Shrunk the URL<h1>
+<h1><center>Honey, I Shrunk the URL</h1>
 
   <br>
 
@@ -7,4 +7,29 @@
     <%= f.text_field :full_url %>
     <%= f.submit "shrink this url" %>
   <% end %>
-<h5>
+</h5>
+
+<h3>List of Previously Shortened Urls</h3>
+
+<div>
+  <table class="">
+    <thead>
+      <tr>
+        <th class="text-center">Original URL</th>
+        <th class="text-center">Short URL</th>
+        <th class="text-center">Created At</th>
+        <th class="text-center">Rank</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <% @urls.each do |url| %>
+        <td><%= url.full_url %></td>
+        <td><%= url.slug %></td>
+        <td><%= url.created_at.strftime("%d/%m/%y %l:%M") %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
