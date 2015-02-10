@@ -2,7 +2,7 @@ class UrlsController < ApplicationController
 
   def index
     @url = Url.new
-    @urls = Url.all
+    @urls = Url.order(created_at: :desc)
   end
 
   def create
