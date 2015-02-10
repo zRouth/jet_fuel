@@ -8,7 +8,7 @@ class UrlsController < ApplicationController
   def create
     @url = Url.create(poopin)
     if @url.save
-      redirect_to urls_path(:url_id)
+      redirect_to urls_path
     end
   end
 
@@ -16,7 +16,6 @@ class UrlsController < ApplicationController
     if params[:slug]
       @url = Url.find_by(slug: params[:slug])
       if redirect_to @url.full_url
-        # @url.clicks += 1
         @url.save
       end
     else
