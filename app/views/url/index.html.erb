@@ -1,0 +1,6 @@
+<h1>Honey I Shrunk the URL<h1>
+  <%= form_for @url do |f| %>
+    <%= f.label :full_url, "Enter your super extra long url here" %>
+    <%= f.text_field :full_url %>
+    <%= f.submit "shrink the url" %>
+  <% end %>
